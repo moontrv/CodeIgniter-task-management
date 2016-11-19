@@ -4,7 +4,7 @@
       if($this->session->flashdata('errors')):
         echo $this->session->flashdata('errors');
       endif;
-      echo form_open('tasks/create', $attributes); ?>
+      echo form_open('tasks/create/'.$this->uri->segment(3).'', $attributes); ?>
 
 <div class="form-group">
   <?php echo form_label('Task Name'); ?>
@@ -27,6 +27,18 @@
     );
   ?>
   <?php echo form_textarea($data); ?>
+</div>
+<div class="form-group">
+  <?php echo form_label('Task Due Date'); ?>
+  <?php
+    $data = array(
+      'class'=>'form-control',
+      'name'=>'due_date',
+      'type'=>'date',
+      'placeholder'=>'Enter Task Name'
+    );
+  ?>
+  <?php echo form_input($data); ?>
 </div>
 <div class="form-group">
   <?php

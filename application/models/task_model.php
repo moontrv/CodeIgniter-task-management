@@ -6,6 +6,10 @@ class Task_model extends CI_Model{
         $query = $this->db->get('tasks');
         return $query->row();
     }
+    public function create_task($data){
+      $insert_query = $this->db->insert('tasks', $data);
+      return $insert_query;
+  }
 }
 
 ?>
