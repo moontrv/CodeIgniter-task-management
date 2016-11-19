@@ -1,3 +1,6 @@
+<h1>Task Display View</h1>
+<?php echo $task->task_name; ?>
+
 <p class="bg-success"><?php
   if($this->session->flashdata('login_success')):
     echo $this->session->flashdata('login_success');
@@ -46,22 +49,24 @@
   <thead>
     <tr>
       <th>
-        Project Name
+        Task Name
       </th>
       <th>
-        Project Description
+        Task Description
+      </th>
+      <th>
+        Date
       </th>
     </tr>
   </thead>
   <tbody>
-    <?php if(isset($projects)): ?>
-    <?php foreach($projects as $project): ?>
+
           <tr>
-    <td><?php   echo $project->project_name; ?></td>
-    <td><?php   echo $project->project_body; ?></td>
+    <td><?php   echo $task->task_name; ?></td>
+    <td><?php   echo $task->task_body; ?></td>
+    <td><?php   echo $task->date_created; ?></td>
     <td><a href="<?php echo base_url();?>projects">View Team Projects</a></td>
           </tr>
-    <?php endforeach; ?>
-  <?php endif; ?>
+
   </tbody>
 </table>
