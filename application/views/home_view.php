@@ -23,4 +23,42 @@
 ?>
 </p>
 
-<h1>Hello this is a view</h1>
+<h1>Personal Projects</h1>
+
+<h1>Projects</h1>
+<p class="bg-success">
+<?php
+  if($this->session->flashdata('project_created')):
+    echo $this->session->flashdata('project_created');
+  endif;
+  if($this->session->flashdata('project_updated')):
+    echo $this->session->flashdata('project_updated');
+  endif;
+  if($this->session->flashdata('project_deleted')):
+    echo $this->session->flashdata('project_deleted');
+  endif;
+?>
+</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>
+        Project Name
+      </th>
+      <th>
+        Project Description
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($projects as $project): ?>
+          <tr>
+    <td><?php   echo $project->project_name; ?></td>
+    <td><?php   echo $project->project_body; ?></td>
+    <td><a href="<?php echo base_url();?>projects">View Team Projects</a></td>
+          </tr>
+    <?php endforeach; ?>
+
+  </tbody>
+</table>

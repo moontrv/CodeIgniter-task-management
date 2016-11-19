@@ -20,7 +20,7 @@
         Project Name
       </th>
       <th>
-        Project Body
+        Project Description
       </th>
     </tr>
   </thead>
