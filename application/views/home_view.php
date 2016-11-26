@@ -59,7 +59,33 @@
           <tr>
     <td><?php   echo $project->project_name; ?></td>
     <td><?php   echo $project->project_body; ?></td>
-    <td><a href="<?php echo base_url();?>projects">View Team Projects</a></td>
+    <td><a href="<?php echo base_url();?>projects/display/<?php echo $project->id;?>">View Project</a></td>
+          </tr>
+    <?php endforeach; ?>
+  <?php endif; ?>
+  </tbody>
+</table>
+
+
+<?php if(isset($tasks)): ?>
+<h1>Tasks</h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>
+        Task Name
+      </th>
+      <th>
+        Task Description
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($tasks as $task): ?>
+          <tr>
+    <td><?php   echo $task->task_name; ?></td>
+    <td><?php   echo $task->task_body; ?></td>
+    <td><a href="<?php echo base_url();?>tasks/display/<?php echo $task->id;?>">View Task</a></td>
           </tr>
     <?php endforeach; ?>
   <?php endif; ?>
