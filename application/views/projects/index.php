@@ -10,6 +10,9 @@
   if($this->session->flashdata('project_deleted')):
     echo $this->session->flashdata('project_deleted');
   endif;
+  if($this->session->flashdata('task_updated')):
+    echo $this->session->flashdata('task_updated');
+  endif;
 ?>
 </p>
 <a class="btn btn-primary pull-right" href="<?php echo base_url(); ?>projects/create">Create Project</a>

@@ -60,13 +60,19 @@
     </tr>
   </thead>
   <tbody>
-
-          <tr>
-    <td><?php   echo $task->task_name; ?></td>
-    <td><?php   echo $task->task_body; ?></td>
-    <td><?php   echo $task->date_created; ?></td>
-    <td><a href="<?php echo base_url();?>projects">View Team Projects</a></td>
-          </tr>
-
+      <tr>
+          <td>
+              <div class="task-name">
+                  <?php  echo $task->task_name; ?>
+              </div>
+              <div class="task-action">        
+                <a href="<?php echo base_url();?>tasks/edit/<?php echo $task->id; ?>">Edit</a>
+                <a href="<?php echo base_url();?>tasks/delete/<?php echo $task->id; ?>">Delete</a>
+              </div>
+          </td>
+      
+          <td><?php   echo $task->task_body; ?></td>
+          <td><?php   echo $task->date_created; ?></td>
+      </tr>
   </tbody>
 </table>
